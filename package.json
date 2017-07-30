@@ -1,0 +1,27 @@
+{
+  "name": "charon",
+  "version": "0.0.0",
+  "main": "./src/app.js",
+  "repository": "git@github.com:DaBultz/Charon.git",
+  "author": "DaBultz <mike.pedersen@kjaereby.com>",
+  "license": "MIT",
+  "scripts": {
+    "test": "npm run eslint",
+    "eslint": "eslint .",
+    "eslint:fix": "eslint . --fix",
+    "precommit": "npm test",
+    "dev": "",
+    "webpack": "webpack",
+    "electron": "electron ."
+  },
+  "devDependencies": {
+    "eslint": "^4.3.0",
+    "eslint-config-airbnb-base": "^11.3.1",
+    "eslint-plugin-import": "^2.7.0",
+    "husky": "^0.14.3",
+    "webpack": "^3.4.1"
+  },
+  "dependencies": {
+    "electron": "^1.6.11"
+  }
+}

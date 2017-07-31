@@ -3,63 +3,9 @@
   <head>
     <meta charset="UTF-8">
     <title>Hello World!</title>
-    <script src="index.js"></script>
     <link rel="stylesheet" href="./styles/reset.css">
     <link rel="stylesheet" href="./styles/main.scss">
-    <script type="text/javascript">
-      window.onload = function() {
-        const remote = require('electron').remote;
-
-        var minSvg = document.createElementNS("http://www.w3.org/2000/svg", 'svg');
-        var minPath = document.createElementNS("http://www.w3.org/2000/svg", 'path');
-        minPath.setAttribute("d", "M 0,5 10,5 10,6 0,6 Z" );
-        minSvg.appendChild(minPath);
-        minSvg.setAttribute("height", "10px");
-        minSvg.setAttribute("width", "10px");
-        var minBtn = document.getElementById("min-btn");
-        minBtn.appendChild(minSvg);
-
-        var closeSvg = document.createElementNS("http://www.w3.org/2000/svg", 'svg');
-        var closePath = document.createElementNS("http://www.w3.org/2000/svg", 'path');
-        closePath.setAttribute("d", "M 0,0 0,0.7 4.3,5 0,9.3 0,10 0.7,10 5,5.7 9.3,10 10,10 10,9.3 5.7,5 10,0.7 10,0 9.3,0 5,4.3 0.7,0 Z" );
-        closeSvg.appendChild(closePath);
-        closeSvg.setAttribute("height", "10px");
-        closeSvg.setAttribute("width", "10px");
-        var closeBtn = document.getElementById("close-btn");
-        closeBtn.appendChild(closeSvg);
-
-        var maxSvg = document.createElementNS("http://www.w3.org/2000/svg", 'svg');
-        var maxPath = document.createElementNS("http://www.w3.org/2000/svg", 'path');
-        maxPath.setAttribute("d", "M 0,0 0,10 10,10 10,0 Z M 1,1 9,1 9,9 1,9 Z" );
-        maxSvg.appendChild(maxPath);
-        maxSvg.setAttribute("height", "10px");
-        maxSvg.setAttribute("width", "10px");
-        var maxBtn = document.getElementById("max-btn");
-        maxBtn.appendChild(maxSvg);
-
-        document.getElementById("min-btn").addEventListener("click", function (e) {
-          var window = remote.getCurrentWindow();
-          window.minimize();
-        });
-
-        document.getElementById("max-btn").addEventListener("click", function (e) { 
-          var window = remote.getCurrentWindow();
-          if (!window.isMaximized()) {
-            maxPath.setAttribute("d", "m 2,1e-5 0,2 -2,0 0,8 8,0 0,-2 2,0 0,-8 z m 1,1 6,0 0,6 -1,0 0,-5 -5,0 z m -2,2 6,0 0,6 -6,0 z" );
-            window.maximize();
-          } else {
-            maxPath.setAttribute("d", "M 0,0 0,10 10,10 10,0 Z M 1,1 9,1 9,9 1,9 Z" );
-            window.unmaximize();
-          }
-        });
-
-        document.getElementById("close-btn").addEventListener("click", function (e) {
-          var window = remote.getCurrentWindow();
-          window.close();
-        });
-    };
-    </script>
-
+    <script type="text/javascript" src="window.js"></script>
   </head>
   <body>
     <div id="win-btn">
